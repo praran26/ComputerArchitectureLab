@@ -27,9 +27,13 @@ main:
 			j euclid
 
 euclid:
-			beq $t0,$t1,print_answer 	# if t0==t1: print t0
-			blt $t0,$t1,first_small 	# if t0<t1: call first_small [t1-=t0; eulcid;]
-			bgt $t0,$t1,second_small	# if t0>t1: call second_small [t0-=t1; eulcid;]
+			# if t0=0 or t1=0, print t0+t1
+			beqz $t0,print_answer 		
+			beqz $t1,print_answer
+			# if t0<=t1: call first_small [t1%=t0; eulcid;]
+			ble $t0,$t1,first_small 
+			# if t0>t1: call second_small [t0%=t1; eulcid;]	
+			bgt $t0,$t1,second_small
 
 print_answer:
 			li $v0,4
@@ -37,16 +41,15 @@ print_answer:
 			syscall
 
 			li $v0,1 					# print answer
-			move $a0,$t0
+			add $a0,$t0,$t1
 			syscall
 
 			# exit
 			li $v0,10
 			syscall
-
 first_small:
-			sub $t1,$t1,$t0
+			rem $t1,$t1,$t0
 			j euclid
 second_small:
-			sub $t0,$t0,$t1
+			rem $t0,$t0,$t1
 			j euclid
