@@ -1,3 +1,5 @@
+# Compute the GCD of two (32-bit) integers using Euclid's algorithm.
+
 			.data
 prompt1: 	.asciiz "Enter 1st integer: "
 prompt2: 	.asciiz "Enter 2nd integer: "

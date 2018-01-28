@@ -1,3 +1,5 @@
+# Load and add the following two 32-bit values: 0x10000001 and 0x20000002 without using pseudo-instructions
+
 			.text
 main:
 			# li $t1,0x10000001 equivalent to
@@ -9,4 +11,5 @@ main:
 			# add (t3=0x30000003)
 			add $t3,$t1,$t2
 			
-			jr $ra
+			li $v0,10
+			syscall

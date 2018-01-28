@@ -1,4 +1,4 @@
-# Sample spim program
+# Implement the sample program and study working of the program
             .data
 prompt:     .asciiz "Enter in an integer: "
 str1:       .asciiz "the answer is: "

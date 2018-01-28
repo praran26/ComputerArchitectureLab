@@ -1,5 +1,7 @@
+# Define an array of 8 integers declared as static data. Read 8 values from the console and store in array.
+
 			.data
-			.align 2  	# align the next datum on a 2**2 byte boundary  
+#			.align 2  	# align the next datum on a 2**2 byte boundary  
 start:		.asciiz "Enter array elements:\n"
 end:		.asciiz "Goodbye!"
 prompt: 	.asciiz "Enter number: "

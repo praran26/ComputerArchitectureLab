@@ -1,3 +1,5 @@
+# Statically declare some prompt strings for user input and do addition of two integers. Print the output to terminal.
+
 			.data
 prompt1: 	.asciiz "Enter 1st integer: "
 prompt2: 	.asciiz "Enter 2nd integer: "
